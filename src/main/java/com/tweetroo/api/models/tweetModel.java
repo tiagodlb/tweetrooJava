@@ -18,6 +18,7 @@ public class tweetModel {
     public tweetModel( TweetDTO data ){
         this.username = data.username();
         this.tweet = data.tweet();
+        this.avatar = data.avatar();
     }
 
     @Id
