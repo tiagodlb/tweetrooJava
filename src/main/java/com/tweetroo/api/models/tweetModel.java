@@ -29,5 +29,8 @@ public class tweetModel {
 
     @Column(length = 200, nullable = false)
     private String tweet;
+
+    @Column(length = 200, nullable = false)
+    private String avatar;
     
 }
