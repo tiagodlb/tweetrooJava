@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tweetroo.api.dto.UserDTO;
-import com.tweetroo.api.models.userModel;
-import com.tweetroo.api.repository.userRepository;
+import com.tweetroo.api.service.UserService;
 
 import jakarta.validation.Valid;
 
@@ -19,11 +18,11 @@ import jakarta.validation.Valid;
 public class Users {
 
     @Autowired
-    private userRepository repository;
+    private UserService service;
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.OK)
     public void create(@RequestBody @Valid UserDTO req){
-        repository.save(new userModel(req));
+        service.save(req);
     }
 }
